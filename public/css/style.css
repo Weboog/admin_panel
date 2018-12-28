@@ -50,7 +50,6 @@ html {
   line-height: 1.5; }
 
 body {
-  overflow: hidden;
   background-color: #EEEEEE; }
 
 header {
@@ -617,13 +616,13 @@ header {
     fill: currentColor; }
 
 .cancel {
-  border: 1px solid #7f0018;
+  border: 1px solid #e5002c;
   color: white;
   background-color: #FF1945;
   text-transform: uppercase; }
 
 .validate {
-  border: 1px solid #0092cc;
+  border: 1px solid #00a4e6;
   color: white;
   background-color: #00B6FF;
   text-transform: uppercase;
@@ -635,7 +634,7 @@ header {
   left: 12rem;
   width: calc(100% - 12rem);
   height: calc(100% - 6rem);
-  background-color: rgba(238, 238, 238, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   display: grid;
   grid-gap: 2rem;
   justify-content: center;
@@ -648,7 +647,9 @@ header {
     opacity: 1; }
   .element .markup {
     display: grid;
-    grid-row-gap: 2rem; }
+    grid-row-gap: 2rem;
+    padding: 2rem;
+    background-color: #EEEEEE; }
   .element h2 {
     color: #363636;
     justify-self: center; }
@@ -661,22 +662,32 @@ header {
       justify-self: end;
       text-transform: uppercase; }
     .element form select {
-      padding: .5rem 1rem;
-      background-color: #EEEEEE; }
+      padding: .5rem 1rem; }
     .element form input, .element form textarea {
       padding: .5rem 1rem;
       width: 20rem; }
     .element form textarea {
       height: 10rem; }
+      .element form textarea.big {
+        width: 30rem; }
   .element .controls ul {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-column-gap: 2rem;
-    justify-items: end;
     align-items: center; }
+    .element .controls ul li:first-of-type {
+      justify-self: start; }
+    .element .controls ul li:last-of-type {
+      justify-self: end; }
 
-.bg-transparent, .element form input, .element form textarea {
-  background-color: transparent; }
+.shadow {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
+
+.bg-transparent, .element form select, .element form input, .element form textarea {
+  background-color: #CCC; }
 
 .border-light, .element form select, .element form input, .element form textarea {
-  border: 1px solid #00B6FF; }
+  border: 1px solid #AAA; }
+
+.border-3px, .element .markup, .element form select, .element form input, .element form textarea {
+  border-radius: 3px; }

@@ -63,7 +63,7 @@
         <nav class="navigation">
             <ul class="navigation__items">
                 <li>
-                    <a href="#add_appart" class="button anchor">
+                    <a href="#add_newsletter" class="button anchor">
                         <svg class="button__icon">
                             <use href="public/img/sprite.svg#add"></use>
                         </svg>
@@ -1249,7 +1249,7 @@
             <div class="map">MAP</div>
         </section>-->
     </main>
-<div id="options" class="popup">
+    <div id="options" class="popup">
     <div class="popup__closer">
         <a href="#">&times;</a>
     </div>
@@ -1330,22 +1330,50 @@
                     <input type="tel" name="phone" id="phone">
 
             </form>
+            <div class="controls">
+                <ul>
+                    <li><a href="#" class="button cancel">
+                        <svg class="button__icon">
+                            <use href="public/img/sprite.svg#cancel"></use>
+                        </svg>
+                        Annuler
+                    </a></li>
+                    <li><a href="" class="button validate">
+                        <svg class="button__icon">
+                            <use href="public/img/sprite.svg#valid"></use>
+                        </svg>
+                        Enregistrer
+                    </a></li>
+                </ul>
+            </div>
         </div>
-        <div class="controls">
-            <ul>
-                <li><a href="#" class="button cancel">
-                    <svg class="button__icon">
-                        <use href="public/img/sprite.svg#cancel"></use>
-                    </svg>
-                    Annuler
-                </a></li>
-                <li><a href="" class="button validate">
-                    <svg class="button__icon">
-                        <use href="public/img/sprite.svg#valid"></use>
-                    </svg>
-                    Enregistrer
-                </a></li>
-            </ul>
+    </div>
+    <!--///////////////////////////////////////////-->
+    <div class="element" id="add_newsletter">
+        <div class="markup">
+            <h2 class="head-1">Ajouter une Newsletter</h2>
+            <form action="">
+                <label for="title">Titre :</label>
+                <input type="text" name="title" id="title">
+                <label for="body">Contenu :</label>
+                <textarea name="body" class="big" id="body"></textarea>
+            </form>
+            <div class="controls">
+                <ul>
+                    <li><a href="#" class="button cancel">
+                        <svg class="button__icon">
+                            <use href="public/img/sprite.svg#cancel"></use>
+                        </svg>
+                        Annuler
+                    </a></li>
+                    <li><a href="" class="button validate">
+                        <svg class="button__icon">
+                            <use href="public/img/sprite.svg#valid"></use>
+                        </svg>
+                        Enregistrer
+                    </a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <!--///////////////////////////////////////////-->

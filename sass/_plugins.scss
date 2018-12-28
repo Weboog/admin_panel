@@ -148,14 +148,14 @@
   }
 }
 .cancel{
-  border: 1px solid darken($color-crimson, 30%);
+  border: 1px solid darken($color-crimson, 10%);
   color: white;
   background-color: $color-crimson;
   text-transform: uppercase;
   //@extend .states;
 }
 .validate{
-  border: 1px solid darken($color-blue-shine, 10%);
+  border: 1px solid darken($color-blue-shine, 5%);
   color: white;
   background-color: $color-blue-shine;
   text-transform: uppercase;
