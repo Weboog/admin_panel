@@ -50,6 +50,7 @@ html {
   line-height: 1.5; }
 
 body {
+  overflow: hidden;
   background-color: #EEEEEE; }
 
 header {
@@ -277,33 +278,6 @@ header {
     @media only screen and (max-width: 24em) {
       .navigation__items li {
         margin-bottom: 1rem; } }
-  .navigation .btn_dashed {
-    border: 1px dashed #444;
-    border-radius: 3px;
-    padding: .5rem 0;
-    width: 10rem;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-column-gap: 1rem;
-    align-items: center;
-    font-size: 1.5rem;
-    color: white;
-    height: 100%;
-    transition: all .1s ease-out; }
-    @media only screen and (max-width: 24em) {
-      .navigation .btn_dashed {
-        font-size: 1.3rem; } }
-    .navigation .btn_dashed:hover {
-      border-style: solid;
-      border-color: #444;
-      background-color: #444; }
-      .navigation .btn_dashed:hover svg {
-        fill: #00B6FF; }
-  .navigation__icon {
-    width: 2rem;
-    height: 2rem;
-    fill: white;
-    justify-self: end; }
   .navigation form {
     display: flex;
     align-items: center;
@@ -377,11 +351,6 @@ header {
   width: 100%; }
   .input_text:focus + .btn svg {
     fill: #00B6FF; }
-
-.btn {
-  background: none;
-  border: none;
-  border-radius: 0; }
 
 .head-2 {
   font-size: 1.5rem;
@@ -531,3 +500,183 @@ header {
         padding: 0 .5rem;
         border-radius: 3px;
         background-color: #FF1945; }
+
+.select {
+  min-width: 12rem; }
+  .select .selected {
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
+    grid-column-gap: 1rem;
+    padding: 0.5rem 0;
+    color: white;
+    border: 1px dashed #444444;
+    border-radius: 3px;
+    cursor: default;
+    background-color: #363636; }
+    .select .selected:hover svg {
+      fill: #00B6FF; }
+    .select .selected span {
+      font-size: 1.5rem;
+      margin-left: 1rem;
+      transition: all .2s ease-out; }
+    .select .selected svg {
+      justify-self: end;
+      width: 2rem;
+      height: 2rem;
+      fill: currentColor;
+      margin-right: 1rem;
+      transition: all .1s ease-out; }
+    .select .selected ul#select {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      transform: translateY(98%);
+      grid-column: 1/span 2;
+      padding: 1rem 0;
+      transition: all .1s ease-out;
+      border-radius: 0 0 3px 3px;
+      border: 1px dashed #444444;
+      border-top: none;
+      background-color: #363636; }
+      .select .selected ul#select li a {
+        display: block;
+        padding: .5rem 1rem; }
+        .select .selected ul#select li a:hover {
+          background-color: #00B6FF;
+          color: #363636; }
+        .select .selected ul#select li a span {
+          color: white;
+          text-transform: uppercase;
+          font-size: 1.4rem; }
+
+.hide_options {
+  display: none;
+  visibility: hidden;
+  opacity: 0; }
+
+.show_options {
+  display: block;
+  visibility: visible;
+  opacity: 1; }
+
+.rotate_arrow {
+  transform: rotate(180deg); }
+
+.slected_id a::before {
+  content: "";
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background-color: lawngreen; }
+
+.button {
+  border-radius: 3px;
+  padding: .5rem 0;
+  min-width: 10rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 1rem;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 100%;
+  transition: all .1s ease-out; }
+  @media only screen and (max-width: 24em) {
+    .button {
+      font-size: 1.3rem; } }
+  .button__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+    justify-self: end; }
+
+.btn {
+  background: none;
+  border: none;
+  border-radius: 0; }
+  .btn svg {
+    fill: white;
+    width: 2rem;
+    height: 2rem; }
+
+.anchor {
+  border: 1px dashed #444;
+  color: white; }
+  .anchor:hover {
+    border-style: solid;
+    border-color: #444;
+    background-color: #444; }
+    .anchor:hover svg {
+      fill: #00B6FF; }
+
+.states:hover {
+  color: #363636; }
+  .states:hover svg {
+    fill: currentColor; }
+
+.cancel {
+  border: 1px solid #7f0018;
+  color: white;
+  background-color: #FF1945;
+  text-transform: uppercase; }
+
+.validate {
+  border: 1px solid #0092cc;
+  color: white;
+  background-color: #00B6FF;
+  text-transform: uppercase;
+  padding: .5rem 1rem; }
+
+.element {
+  position: absolute;
+  top: 6rem;
+  left: 12rem;
+  width: calc(100% - 12rem);
+  height: calc(100% - 6rem);
+  background-color: rgba(238, 238, 238, 0.9);
+  display: grid;
+  grid-gap: 2rem;
+  justify-content: center;
+  align-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .1s ease-out; }
+  .element:target {
+    visibility: visible;
+    opacity: 1; }
+  .element .markup {
+    display: grid;
+    grid-row-gap: 2rem; }
+  .element h2 {
+    color: #363636;
+    justify-self: center; }
+  .element form {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, auto);
+    font-size: 1.5rem; }
+    .element form label {
+      justify-self: end;
+      text-transform: uppercase; }
+    .element form select {
+      padding: .5rem 1rem;
+      background-color: #EEEEEE; }
+    .element form input, .element form textarea {
+      padding: .5rem 1rem;
+      width: 20rem; }
+    .element form textarea {
+      height: 10rem; }
+  .element .controls ul {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-column-gap: 2rem;
+    justify-items: end;
+    align-items: center; }
+
+.bg-transparent, .element form input, .element form textarea {
+  background-color: transparent; }
+
+.border-light, .element form select, .element form input, .element form textarea {
+  border: 1px solid #00B6FF; }

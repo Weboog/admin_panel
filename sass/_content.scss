@@ -35,37 +35,6 @@
       }
     }
   }
-  .btn_dashed{
-    border: 1px dashed #444;
-    border-radius: 3px;
-    padding: .5rem 0;
-    width: 10rem;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-column-gap: 1rem;
-    align-items: center;
-    @media only screen and (max-width: $bp-small) {
-      font-size: 1.3rem;
-    }
-    font-size: 1.5rem;
-    color: white;
-    height: 100%;
-    transition: all .1s ease-out;
-    &:hover{
-      border-style: solid;
-      border-color: #444;
-      background-color: #444;
-      svg{
-        fill: $color-blue-shine;
-      }
-    }
-  }
-  &__icon{
-    width: 2rem;
-    height: 2rem;
-    fill: white;
-    justify-self: end;
-  }
   form{
     @media only screen and (max-width: $bp-large) {
       width: auto;
@@ -152,11 +121,7 @@
     fill: $color-blue-shine;
   }
 }
-.btn{
-  background: none;
-  border: none;
-  border-radius: 0;
-}
+
 .head-2{
   @media only screen and(max-width: $bp-medium) {
     margin-left: 0;
