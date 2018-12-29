@@ -1,5 +1,5 @@
 .element{
-  position: absolute;
+  position: fixed;
   top: 6rem;
   left: 12rem;
   width: calc(100% - 12rem);
@@ -9,49 +9,63 @@
   grid-gap: 2rem;
   justify-content: center;
   align-content: center;
-  visibility: hidden;
   opacity: 0;
+  transform: translateY(100%);
   ///////////////////////////////
-  transition: all .1s ease-out;
+  transition: all .2s ease-out;
   ///////////////////////////////
   &:target{
-    visibility: visible;
     opacity: 1;
+    transform: translateY(0);
   }
   .markup{
     display: grid;
     grid-row-gap: 2rem;
-    padding: 2rem;
     background-color: $color-grey-bg;
     @extend .border-3px;
+    overflow: hidden;
   }
   h2{
-    color: $color-black;
-    justify-self: center;
+    color: white;
+    text-align: center;
+    background-color: $color-blue-shine;
+    padding: 2rem;
+    font-family: $font-roboto;
+    font-weight: 100;
   }
   form{
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(2, auto);
     font-size: 1.5rem;
+    padding: 0 2rem;
     label{
       justify-self: end;
       text-transform: uppercase;
+      font-size: 1.4rem;
     }
     select{
       padding: .5rem 1rem;
       @extend .border-light;
-      @extend .bg-transparent;
       @extend .border-3px;
+      background-color: white;
+      &:focus{
+        @extend .focus;
+      }
     }
     input, textarea{
       padding: .5rem 1rem;
       width: 20rem;
       @extend .border-light;
-      @extend .bg-transparent;
       @extend .border-3px;
+      background-color: white;
+      transition: all .2s ease-out;
+      &:focus{
+        @extend .focus;
+      }
     }
     textarea{
+      font-size: 1.4rem;
       height: 10rem;
       &.big{
         width: 30rem;
@@ -64,6 +78,7 @@
       grid-template-columns: repeat(2, auto);
       grid-column-gap: 2rem;
       align-items: center;
+      padding: 0 2rem 2rem;
       li{
         &:first-of-type{
           justify-self: start;
@@ -81,11 +96,15 @@
   box-shadow: 0 1rem 3rem rgba(0,0,0, .1);
 }
 .bg-transparent{
-  background-color: #CCC;
+  background-color: #EEE;
 }
 .border-light{
   border: 1px solid #AAA;
 }
 .border-3px{
   border-radius: 3px;
+}
+.focus{
+  border: 1px solid $color-blue-shine;
+  box-shadow: 0 0 .5rem rgba($color-blue-shine, .5);
 }
