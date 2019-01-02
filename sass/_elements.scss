@@ -30,6 +30,7 @@
     grid-template-columns: repeat(2, auto);
     grid-column-gap: 2rem;
     font-size: 1.5rem;
+    cursor: default;
     > *{
       padding: 0 2rem;
     }
@@ -169,6 +170,11 @@
   display: grid;
   grid-gap: 2rem;
   align-items: start;
+}
+.news_body{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: .5rem;
 }
 ///////////////////////////////////////
 //EXTENSIONS

@@ -656,7 +656,8 @@ header {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-column-gap: 2rem;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    cursor: default; }
     .element .show > * {
       padding: 0 2rem; }
     .element .show > div:last-of-type p {
@@ -749,6 +750,11 @@ header {
   display: grid;
   grid-gap: 2rem;
   align-items: start; }
+
+.news_body {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: .5rem; }
 
 .shadow {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
