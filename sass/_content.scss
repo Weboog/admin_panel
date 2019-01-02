@@ -236,6 +236,11 @@
       }
     }
   }
+  .newsletter, .callback{
+    .actions_menu{
+      justify-content: center;
+    }
+  }
   .actions_icon{
     width: 2rem;
     height: 2rem;
