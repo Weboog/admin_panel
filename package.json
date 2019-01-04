@@ -2,7 +2,7 @@
   "name": "grid",
   "version": "1.0.0",
   "description": "Grid learn",
-  "main": "index.html",
+  "main": "views/appartment/index.php",
   "scripts": {
     "compile": "node-sass sass/main.scss public/css/style.css -w",
     "live": "live-server --browser=firefox"

@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +13,17 @@
     <aside class="aside">
         <h1 class="logo"></h1>
         <ul class="nav">
-            <li><a href="#">
+            <li><a href="index.php">
                 <svg class="nav__icon nav__icon--blue">
                     <use href="public/img/sprite.svg#home"></use>
                 </svg>
                 <span class="nav__text">Appartements</span></a></li>
-            <li><a href="#">
+            <li><a href="../callback/index.php">
                 <svg class="nav__icon nav__icon--crimson">
                     <use href="public/img/sprite.svg#headset"></use>
                 </svg>
                 <span class="nav__text">Callbacks</span></a></li>
-            <li><a href="#">
+            <li><a href="../newsletter/index.php">
                 <svg class="nav__icon nav__icon--mustard">
                     <use href="public/img/sprite.svg#send"></use>
                 </svg>
@@ -43,8 +44,8 @@
                 </a>
             </div>
             <p class="user__id">
-                <span class="user__level">Adminstrateur</span><br>
-                <strong class="user__names">ABELL RAFFICK</strong>
+                <span class="user__level"><?php echo $_SESSION['level']; ?></span><br>
+                <strong class="user__names"><?php echo $_SESSION['names']; ?></strong>
             </p>
             <div class="user__options">
                 <ul class="user__menu">
