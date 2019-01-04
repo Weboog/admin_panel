@@ -8,6 +8,9 @@
 
 class Newsletter extends Controller
 {
+    public function index(){
+        $this->render('index');
+    }
 
     public function all(){
         $model = $this->getModel();

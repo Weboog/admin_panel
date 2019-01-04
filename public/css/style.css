@@ -121,19 +121,22 @@ header {
     font-size: 1.5rem; }
   .user__level {
     color: #EEE;
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    text-transform: capitalize; }
     @media only screen and (max-width: 29em) {
       .user__level {
         font-size: 1rem; } }
     @media only screen and (max-width: 24em) {
       .user__level {
         display: none; } }
-  @media only screen and (max-width: 29em) {
-    .user__names {
-      font-size: 1.4rem; } }
-  @media only screen and (max-width: 24em) {
-    .user__names {
-      display: none; } }
+  .user__names {
+    text-transform: uppercase; }
+    @media only screen and (max-width: 29em) {
+      .user__names {
+        font-size: 1.4rem; } }
+    @media only screen and (max-width: 24em) {
+      .user__names {
+        display: none; } }
   .user__options {
     position: absolute;
     visibility: hidden;

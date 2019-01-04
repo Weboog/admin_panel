@@ -79,6 +79,7 @@ header{
     }
     color: #EEE;
     font-size: 1.2rem;
+    text-transform: capitalize;
   }
   &__names{
     @media only screen and (max-width: $bp-medium) {
@@ -87,6 +88,7 @@ header{
     @media only screen and (max-width: $bp-small) {
       display: none;
     }
+    text-transform: uppercase;
   }
   &__options{
     position: absolute;
