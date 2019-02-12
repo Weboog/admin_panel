@@ -635,19 +635,32 @@ header {
 
 .appart_form {
   display: grid;
-  grid-row-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  padding: 2rem 5rem;
   justify-content: center; }
   .appart_form select, .appart_form input, .appart_form textarea {
-    padding: .5rem 1rem;
+    padding: 1rem;
     border-radius: 3px;
-    border: none; }
+    border: 1px solid #bbbbbb; }
   .appart_form form {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
     display: grid;
-    grid-row-gap: 1rem; }
+    grid-row-gap: 1.5rem; }
     .appart_form form > div {
-      grid-gap: 1rem; }
+      grid-gap: 1.5rem; }
+  .appart_form .guide {
+    grid-row: 1 / 3;
+    padding: 3rem;
+    border-radius: 3px;
+    color: white; }
+    .appart_form .guide p {
+      font-size: 1.5rem; }
 
 .head_form {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   text-transform: uppercase;
   text-align: center;
   font-size: 2rem; }

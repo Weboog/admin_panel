@@ -23,5 +23,6 @@ class Appartment extends Controller
     public function add(){
             $this->render('add');
         var_dump($_POST);
+        var_dump($_FILES);
     }
 }

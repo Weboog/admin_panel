@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/locatia/admin-panel/public/css/style.css">
-    <script src="/locatia/admin-panel/public/js/main.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/admin_panel/public/css/style.css">
+    <script src="/admin_panel/public/js/main.js" type="text/javascript"></script>
     <title>LOCATIA</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
                     <div class="selected">
                         <span data-value="1" class="label_selected">IDENTIFIANT</span>
                         <svg class="arrow">
-                            <use href="public/img/sprite.svg#down"></use>
+                            <use href="/admin_panel/public/img/sprite.svg#down"></use>
                         </svg>
                         <ul id="select" class="hide_options">
                             <li><a class="option_item" data-id="1" href="#"><span>Identifiant</span></a></li>
@@ -39,7 +39,7 @@
                     <input type="search" class="input_text" name="search" placeholder="">
                     <button class="btn">
                         <svg>
-                            <use href="public/img/sprite.svg#search"></use>
+                            <use href="/admin_panel/public/img/sprite.svg#search"></use>
                         </svg>
                     </button>
                 </form>
@@ -128,7 +128,11 @@
                 <input type="reset" value="Réinitialiser">
                 <button>Enregistrer</button>
             </form>
-
+            <div class="guide">
+                <p class="guide__address">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad cumque eius eos magnam necessitatibus nulla possimus ratione, reprehenderit sit, sunt vero vitae. Accusamus excepturi ipsum itaque modi nemo praesentium.
+                </p>
+            </div>
         </section>
     </main>
 </body>
