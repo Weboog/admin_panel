@@ -70,10 +70,12 @@ window.addEventListener('load', function () {
         label.dataset.value = this.dataset.id;
     }
 
-    select.addEventListener('click', toggleUnroll);
+    if (select !== null) {
+        select.addEventListener('click', toggleUnroll);
+    }
     items.forEach(function (item) {
         item.addEventListener('click', makeSelected)
-    })
+    });
 
     //:::::::::::::::::::::::::::::::::::::::::::::::::://
     //LOGIC FOR ADD BUTTONS
@@ -93,5 +95,42 @@ window.addEventListener('load', function () {
     loaders.forEach(function (loader) {
         loader.addEventListener('click', loadContent);
     })
+
+    //:::::::::::::::::::::::::::::::::::::::::::::::::://
+    //ADD APARTMENT
+    let addImages = document.querySelector("#gallery");
+    let imageContainer = document.querySelector('.sample_images');
+    let added = [];
+    addImages.addEventListener('change', function () {
+        function readImage(file){
+            let fr = new FileReader();
+            if (/\.(jpe?g)$/i.test(file.name)) {
+                if (!added.includes(file.name)) {
+                    fr.addEventListener('load', function () {
+                        let img = new Image();
+                        img.alt = file.name;
+                        img.title = file.name;
+                        img.src = this.result;
+                        imageContainer.appendChild(img);
+                        added.push(file.name)
+                    });
+                    fr.readAsDataURL(file);
+                } else {
+                    let errorMessage = document.createTextNode('Cette image est déjà sélectionnée.');
+                    //imageContainer.appendChild(errorMessage);
+                }
+            }else {
+                let errorMessage = document.createTextNode('Seules les image au format JPG ou JPEG sont autorisées.');
+                //imageContainer.appendChild(errorMessage);
+            }
+        }
+        if (this.files){
+            [].forEach.call(this.files, readImage);
+        }
+        console.log(added)
+    });
+
+
+
 
 });

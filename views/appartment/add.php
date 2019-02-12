@@ -15,40 +15,11 @@
 <?php require_once './inc/header.php' ?>
 
     <main class="content">
-        <nav class="navigation">
-            <ul class="navigation__items">
-                <li>
-                </li>
-            </ul>
-            <div class="search">
-                <!-- //////////////////////////////////////////////// -->
-                <div class="select">
-                    <div class="selected">
-                        <span data-value="1" class="label_selected">IDENTIFIANT</span>
-                        <svg class="arrow">
-                            <use href="/admin_panel/public/img/sprite.svg#down"></use>
-                        </svg>
-                        <ul id="select" class="hide_options">
-                            <li><a class="option_item" data-id="1" href="#"><span>Identifiant</span></a></li>
-                            <li><a class="option_item" data-id="2" href="#"><span>Position</span></a></li>
-                            <li><a class="option_item" data-id="3" href="#"><span>Date</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <form>
-                    <input type="search" class="input_text" name="search" placeholder="">
-                    <button class="btn">
-                        <svg>
-                            <use href="/admin_panel/public/img/sprite.svg#search"></use>
-                        </svg>
-                    </button>
-                </form>
-            </div>
-        </nav>
         <section class="appart_form">
             <h2 class="head_form">Ajouter un nouvel appartement</h2>
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="owner">
+                    <h3 class="group_label">Propréitaire</h3>
                     <select name="owner" id="owner">
                         <option value="Abell">Abell</option>
                         <option value="Joseph">Joseph</option>
@@ -56,6 +27,7 @@
                     <a href="owners" class="add_owner">Nouveau propriétaire</a>
                 </div>
                 <div class="address">
+                    <h3 class="group_label">Adresse</h3>
                     <select name="type" id="type">
                         <option value="0">Type du bien</option>
                         <option value="1">Appartement</option>
@@ -86,6 +58,7 @@
                     <textarea name="address" id="address" placeholder="Addresse complète"></textarea>
                 </div>
                 <div class="infos">
+                    <h3 class="group_label">Informations</h3>
                     <select name="pieces" id="pieces">
                         <option value="0">Pièces</option>
                         <option value="1">1</option>
@@ -116,23 +89,21 @@
                     <input type="text" name="price" placeholder="Prix">
                 </div>
                 <div class="details">
+                    <h3 class="group_label">Détails</h3>
                     <textarea name="description" id="description" placeholder="Decription"></textarea>
                     <textarea name="nearby" id="nearby" placeholder="à l'éxtérieur"></textarea>
                     <textarea name="inside" id="inside" placeholder="à l'intérieur"></textarea>
                     <textarea name="conditions" id="conditions" placeholder="Conditions à remplir"></textarea>
                 </div>
                 <div class="gallery">
+                    <h3 class="group_label">Gallerie</h3>
                     <label for="gallery">Sélectionnez des images</label>
                     <input type="file" id="gallery" name="gallery" accept="image/jpeg" multiple>
+                    <div class="sample_images"></div>
                 </div>
                 <input type="reset" value="Réinitialiser">
                 <button>Enregistrer</button>
             </form>
-            <div class="guide">
-                <p class="guide__address">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad cumque eius eos magnam necessitatibus nulla possimus ratione, reprehenderit sit, sunt vero vitae. Accusamus excepturi ipsum itaque modi nemo praesentium.
-                </p>
-            </div>
         </section>
     </main>
 </body>

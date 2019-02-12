@@ -635,19 +635,29 @@ header {
 
 .appart_form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
   padding: 2rem 5rem;
   justify-content: center; }
   .appart_form select, .appart_form input, .appart_form textarea {
     padding: 1rem;
     border-radius: 3px;
-    border: 1px solid #bbbbbb; }
+    border: 1px solid #e1e1e1;
+    background-color: #f6f6f6;
+    color: #3c3c3c; }
+    .appart_form select:focus, .appart_form input:focus, .appart_form textarea:focus {
+      border-color: #4169E1;
+      box-shadow: 0 0 5px rgba(65, 105, 225, 0.5); }
+  .appart_form textarea {
+    width: 30rem; }
   .appart_form form {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     display: grid;
-    grid-row-gap: 1.5rem; }
+    grid-row-gap: 1.5rem;
+    background-color: white;
+    border-radius: 3px;
+    padding: 3rem;
+    box-shadow: 0 5px 5px rgba(54, 54, 54, 0.2); }
     .appart_form form > div {
       grid-gap: 1.5rem; }
   .appart_form .guide {
@@ -657,18 +667,54 @@ header {
     color: white; }
     .appart_form .guide p {
       font-size: 1.5rem; }
-
-.head_form {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 2rem; }
-
-.owner {
-  display: grid;
-  grid-template-columns: 1fr auto; }
-  .owner .add_owner {
+  .appart_form .head_form {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem; }
+  .appart_form .group_label {
+    grid-column: 1 / -1;
+    grid-row: span 2;
+    font-size: 1.5rem;
+    color: #4169E1;
+    display: flex;
+    align-items: center; }
+    .appart_form .group_label + * {
+      grid-column: 1 / 2; }
+    .appart_form .group_label::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-left: 1rem;
+      background-color: #d5d5d5; }
+  .appart_form .owner {
+    display: grid;
+    grid-template-columns: 1fr auto; }
+    .appart_form .owner select {
+      grid-column: 1 / 2; }
+    .appart_form .owner .add_owner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      border-radius: 3px;
+      padding: .5rem 2rem;
+      background-color: #00B6FF;
+      color: white; }
+  .appart_form .address {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+    .appart_form .address textarea {
+      grid-column: span 2; }
+  .appart_form .infos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+  .appart_form .details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+  .appart_form .gallery label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -676,32 +722,21 @@ header {
     border-radius: 3px;
     padding: .5rem 2rem;
     background-color: #00B6FF;
-    color: white; }
-
-.address {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); }
-  .address textarea {
-    grid-column: span 2; }
-
-.infos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); }
-
-.details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); }
-
-.gallery label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  border-radius: 3px;
-  padding: .5rem 2rem;
-  background-color: #00B6FF;
-  color: white;
-  cursor: pointer; }
-
-#gallery {
-  display: none; }
+    color: white;
+    cursor: pointer; }
+  .appart_form .gallery .sample_images {
+    display: grid;
+    grid-template-columns: repeat(3, 15rem);
+    justify-content: center;
+    grid-gap: 1rem;
+    padding: 2rem; }
+  .appart_form .gallery img {
+    width: 15rem;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    padding: 1rem;
+    box-shadow: 0 3px 8px rgba(54, 54, 54, 0.2);
+    cursor: pointer; }
+  .appart_form #gallery {
+    display: none; }
