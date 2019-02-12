@@ -19,4 +19,9 @@ class Appartment extends Controller
         $options = array('column' => array('name' => 'id', 'value' => $id), 'order_by' => 'id', 'sense' => 'ASC', 'limit' => array('start' => 0, 'count' => 100));
         $model->getBy($options);
     }
+
+    public function add(){
+            $this->render('add');
+        var_dump($_POST);
+    }
 }

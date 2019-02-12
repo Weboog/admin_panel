@@ -120,6 +120,10 @@ abstract class Database {
         return $result;
     }
 
+    public function insert(array $columns, array $values){
+
+    }
+
     public static function pre(array $array){
         echo '<pre>';
         print_r($array);

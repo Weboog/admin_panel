@@ -633,144 +633,62 @@ header {
   text-transform: uppercase;
   padding: .5rem 1rem; }
 
-.element {
-  position: fixed;
-  top: 6rem;
-  left: 12rem;
-  width: calc(100% - 12rem);
-  height: calc(100% - 6rem);
-  background-color: rgba(0, 0, 0, 0.9);
+.appart_form {
   display: grid;
-  grid-gap: 2rem;
-  justify-content: center;
-  align-content: center;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all .2s ease-out; }
-  .element:target {
-    opacity: 1;
-    transform: translateY(0); }
-  .element .markup {
+  grid-row-gap: 2rem;
+  justify-content: center; }
+  .appart_form select, .appart_form input, .appart_form textarea {
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    border: none; }
+  .appart_form form {
     display: grid;
-    grid-row-gap: 2rem;
-    background-color: #EEEEEE;
-    overflow: hidden; }
-  .element .show {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-column-gap: 2rem;
-    font-size: 1.5rem;
-    cursor: default; }
-    .element .show > * {
-      padding: 0 2rem; }
-    .element .show > div:last-of-type p {
-      margin-bottom: 2rem;
-      display: flex;
-      flex-wrap: wrap; }
-      .element .show > div:last-of-type p span {
-        display: block;
-        margin: .5rem 1rem; }
-        .element .show > div:last-of-type p span::before {
-          content: "\203A";
-          margin-right: .5rem; }
-    .element .show > div:last-of-type h4 {
-      font-family: "Roboto Condensed", sans-serif;
-      font-weight: 100;
-      text-transform: uppercase;
-      margin-bottom: .5rem; }
-    .element .show ul {
-      padding: 1rem 0;
-      cursor: default; }
-      .element .show ul li {
-        padding: .5rem 0; }
-        .element .show ul li:hover:not(.secret) {
-          background-color: rgba(0, 182, 255, 0.1); }
-        .element .show ul li span {
-          padding-left: 1rem; }
-        .element .show ul li strong {
-          padding-right: 2rem;
-          font-family: "Roboto Condensed", sans-serif;
-          font-weight: 600; }
-        .element .show ul li.secret strong {
-          color: crimson; }
-    .element .show p {
-      max-width: 40rem; }
-  .element h2 {
-    color: white;
-    text-align: center;
-    background-color: #00B6FF;
-    padding: 2rem;
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: 100; }
-  .element form {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(2, auto);
-    font-size: 1.5rem;
-    padding: 0 2rem; }
-    .element form label {
-      text-transform: uppercase;
-      font-size: 1.4rem; }
-    .element form select {
-      padding: .5rem 1rem;
-      background-color: white; }
-    .element form input, .element form textarea {
-      padding: .5rem 1rem;
-      width: 20rem;
-      background-color: white;
-      transition: all .2s ease-out; }
-    .element form textarea {
-      font-size: 1.4rem;
-      height: 10rem; }
-      .element form textarea.big {
-        width: 30rem; }
-  .element .controls ul {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-column-gap: 2rem;
+    grid-row-gap: 1rem; }
+    .appart_form form > div {
+      grid-gap: 1rem; }
+
+.head_form {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem; }
+
+.owner {
+  display: grid;
+  grid-template-columns: 1fr auto; }
+  .owner .add_owner {
+    display: flex;
     align-items: center;
-    padding: 0 2rem 2rem; }
-    .element .controls ul li:first-of-type {
-      justify-self: start; }
-    .element .controls ul li:last-of-type {
-      justify-self: end; }
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 3px;
+    padding: .5rem 2rem;
+    background-color: #00B6FF;
+    color: white; }
 
-.group {
-  display: grid; }
-  .group h4 {
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: 100;
-    text-transform: uppercase;
-    margin-bottom: 1rem; }
-
-.data_primitif {
+.address {
   display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: repeat(2, auto);
-  align-items: start; }
+  grid-template-columns: repeat(2, 1fr); }
+  .address textarea {
+    grid-column: span 2; }
 
-.data_deep {
+.infos {
   display: grid;
-  grid-gap: 2rem;
-  align-items: start; }
+  grid-template-columns: repeat(2, 1fr); }
 
-.news_body {
+.details {
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-column-gap: .5rem; }
+  grid-template-columns: repeat(2, 1fr); }
 
-.shadow {
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
+.gallery label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 3px;
+  padding: .5rem 2rem;
+  background-color: #00B6FF;
+  color: white;
+  cursor: pointer; }
 
-.bg-transparent {
-  background-color: #EEE; }
-
-.border-light, .element form select, .element form input, .element form textarea {
-  border: 1px solid #AAA; }
-
-.border-3px, .element .markup, .element .show ul li:hover:not(.secret), .element form select, .element form input, .element form textarea {
-  border-radius: 3px; }
-
-.focus, .element form select:focus, .element form input:focus, .element form textarea:focus {
-  border: 1px solid #00B6FF;
-  box-shadow: 0 0 0.5rem rgba(0, 182, 255, 0.5); }
+#gallery {
+  display: none; }

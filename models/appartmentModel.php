@@ -21,4 +21,8 @@ class appartmentModel extends Database
         $this->find($options);
     }
 
+    public function create(){
+
+    }
+
 }
