@@ -4,7 +4,7 @@
 class Appartment extends Controller
 {
 
-    private static $DIR = 'public/img/gallery/';
+    private static $DIR = '../locatia/public/img/gallery/large/';
     private static $EXTENSIONS = array('jpg', 'jpeg');
     private static $MAX_SIZE = 1024000;
 
@@ -34,7 +34,7 @@ class Appartment extends Controller
 
     public function save(){
 
-        $columns = array('serial', 'gallery', 'owner', 'type', 'city', 'zone', 'borough', 'address', 'pieces', 'rooms', 'surface', 'price', 'description', 'external', 'internal', 'conditions');
+        $columns = array('serial', 'gallery', 'owner', 'type', 'city', 'zone', 'borough', 'pieces', 'rooms', 'surface', 'price', 'address', 'description', 'external', 'internal', 'conditions');
         $serial = $_POST['city'].$_POST['zone'].$_POST['borough'];
         $gallery = count($_FILES['gallery']['name']);
         $values = array(
@@ -45,11 +45,11 @@ class Appartment extends Controller
             $_POST['city'],
             $_POST['zone'],
             $_POST['borough'],
-            $this->quote($_POST['address']),
             $_POST['pieces'],
             $_POST['rooms'],
             $_POST['surface'],
             $_POST['price'],
+            $this->quote($_POST['address']),
             $this->quote($_POST['description']),
             $this->quote($_POST['external']),
             $this->quote($_POST['internal']),
@@ -58,8 +58,8 @@ class Appartment extends Controller
         //print_r($values);
         //echo $serial.' ========= '.$gallery;
         //print_r($_POST);
-        $this->getModel()->create($columns, $values);
-        /*$test = true;
+        $last_id = $this->getModel()->create($columns, $values);
+        $test = true;
         $status = array('success' => 0, 'fail' => 0);
 
         for ($i = 0; $i < count($_FILES['gallery']['name']); $i++) {
@@ -79,12 +79,12 @@ class Appartment extends Controller
                 $test = false;
             }
             if ($test === true) {
-                move_uploaded_file($tmp_name, $full_target);
+                move_uploaded_file($tmp_name, self::$DIR . $serial.$last_id.'-'.($i+1).'.jpg');
                 $status['success']++;
             }else{
                 $status['fail']++;
             }
         }
-            echo json_encode($status);*/
+            echo json_encode($status);
     }
 }

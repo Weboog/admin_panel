@@ -94,7 +94,7 @@ window.addEventListener('load', function () {
     let loaders = document.querySelectorAll('.load_content');
     loaders.forEach(function (loader) {
         loader.addEventListener('click', loadContent);
-    })
+    });
 
     //:::::::::::::::::::::::::::::::::::::::::::::::::://
     //ADD APARTMENT

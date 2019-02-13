@@ -22,7 +22,7 @@ class appartmentModel extends Database
     }
 
     public function create(array $columns, array $params){
-        $this->insert($columns, $params);
+        return $this->insert($columns, $params);
     }
 
 }
