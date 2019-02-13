@@ -98,6 +98,23 @@ window.addEventListener('load', function () {
 
     //:::::::::::::::::::::::::::::::::::::::::::::::::://
     //ADD APARTMENT
+
+    //Send form with ajax
+    let form = document.forms.namedItem('new_appart');
+    form.addEventListener('submit', addApart);
+    function addApart (e) {
+        let fd = new FormData(form);
+        //fd.delete('gallery[]');
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', '/admin_panel/appartment/save', true);
+        xhr.addEventListener('load', function (e) {
+            console.log(this.responseText);
+        });
+        xhr.send(fd);
+        e.preventDefault();
+    }
+
+    //Preview Images to be uploaded
     let addImages = document.querySelector("#gallery");
     let imageContainer = document.querySelector('.sample_images');
     let added = [];
@@ -112,7 +129,7 @@ window.addEventListener('load', function () {
                         img.title = file.name;
                         img.src = this.result;
                         imageContainer.appendChild(img);
-                        added.push(file.name)
+                        added.push(file.name);
                     });
                     fr.readAsDataURL(file);
                 } else {
@@ -127,10 +144,5 @@ window.addEventListener('load', function () {
         if (this.files){
             [].forEach.call(this.files, readImage);
         }
-        console.log(added)
     });
-
-
-
-
 });

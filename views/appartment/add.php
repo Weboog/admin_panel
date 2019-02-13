@@ -17,12 +17,13 @@
     <main class="content">
         <section class="appart_form">
             <h2 class="head_form">Ajouter un nouvel appartement</h2>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="" method="post" name="new_appart" enctype="multipart/form-data">
                 <div class="owner">
                     <h3 class="group_label">Propréitaire</h3>
                     <select name="owner" id="owner">
-                        <option value="Abell">Abell</option>
-                        <option value="Joseph">Joseph</option>
+                        <option value="0">Propriétaire</option>
+                        <option value="1">Abell</option>
+                        <option value="2">Joseph</option>
                     </select>
                     <a href="owners" class="add_owner">Nouveau propriétaire</a>
                 </div>
@@ -39,7 +40,7 @@
                         <option value="2">Salé</option>
                         <option value="3">Témara</option>
                     </select>
-                    <select name="district" id="district">
+                    <select name="zone" id="district">
                         <option value="0">Zone</option>
                         <option value="1">Zone 1</option>
                         <option value="2">Zone 2</option>
@@ -91,18 +92,18 @@
                 <div class="details">
                     <h3 class="group_label">Détails</h3>
                     <textarea name="description" id="description" placeholder="Decription"></textarea>
-                    <textarea name="nearby" id="nearby" placeholder="à l'éxtérieur"></textarea>
-                    <textarea name="inside" id="inside" placeholder="à l'intérieur"></textarea>
+                    <textarea name="external" id="external" placeholder="à l'éxtérieur"></textarea>
+                    <textarea name="internal" id="internal" placeholder="à l'intérieur"></textarea>
                     <textarea name="conditions" id="conditions" placeholder="Conditions à remplir"></textarea>
                 </div>
                 <div class="gallery">
                     <h3 class="group_label">Gallerie</h3>
                     <label for="gallery">Sélectionnez des images</label>
-                    <input type="file" id="gallery" name="gallery" accept="image/jpeg" multiple>
+                    <input type="file" id="gallery" name="gallery[]" accept="image/jpeg" multiple>
                     <div class="sample_images"></div>
                 </div>
                 <input type="reset" value="Réinitialiser">
-                <button>Enregistrer</button>
+                <input type="submit" value="Enregistrer">
             </form>
         </section>
     </main>
