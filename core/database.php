@@ -125,6 +125,7 @@ abstract class Database {
         $req = sprintf('insert into %s (%s) values (%s)', $this->_table, join(', ', $columns), join(', ', $values));
         $stm = $pdo->prepare($req);
         $stm->execute();
+        return $pdo->lastInsertId();
     }
 
     public static function pre(array $array){

@@ -4,7 +4,7 @@
 class Appartment extends Controller
 {
 
-    private static $DIR = 'public/img/gallery/';
+    private static $DIR = '../locatia/public/img/gallery/large/';
     private static $EXTENSIONS = array('jpg', 'jpeg');
     private static $MAX_SIZE = 1024000;
 
@@ -53,10 +53,13 @@ class Appartment extends Controller
             $this->quote($_POST['description']),
             $this->quote($_POST['external']),
             $this->quote($_POST['internal']),
-            $this->quote($_POST['conditions'])
-        );
-        $this->getModel()->create($columns, $values);
-        /*$test = true;
+            $this->quote($_POST['conditions']),
+            );
+        //print_r($values);
+        //echo $serial.' ========= '.$gallery;
+        //print_r($_POST);
+        $last_id = $this->getModel()->create($columns, $values);
+        $test = true;
         $status = array('success' => 0, 'fail' => 0);
 
         for ($i = 0; $i < count($_FILES['gallery']['name']); $i++) {
@@ -76,12 +79,12 @@ class Appartment extends Controller
                 $test = false;
             }
             if ($test === true) {
-                move_uploaded_file($tmp_name, $full_target);
+                move_uploaded_file($tmp_name, self::$DIR . $serial.$last_id.'-'.($i+1).'.jpg');
                 $status['success']++;
             }else{
                 $status['fail']++;
             }
         }
-            echo json_encode($status);*/
+            echo json_encode($status);
     }
 }
