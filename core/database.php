@@ -123,7 +123,6 @@ abstract class Database {
     public function insert(array $columns, array $values){
         $pdo = $this->getInstance();
         $req = sprintf('insert into %s (%s) values (%s)', $this->_table, join(', ', $columns), join(', ', $values));
-        echo $req;
         $stm = $pdo->prepare($req);
         $stm->execute();
     }

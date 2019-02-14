@@ -34,7 +34,7 @@ class Appartment extends Controller
 
     public function save(){
 
-        $columns = array('serial', 'gallery', 'owner', 'type', 'city', 'zone', 'borough', 'address', 'pieces', 'rooms', 'surface', 'price', 'description', 'external', 'internal', 'conditions');
+        $columns = array('serial', 'gallery', 'owner', 'type', 'city', 'zone', 'borough', 'pieces', 'rooms', 'surface', 'price', 'address', 'description', 'external', 'internal', 'conditions');
         $serial = $_POST['city'].$_POST['zone'].$_POST['borough'];
         $gallery = count($_FILES['gallery']['name']);
         $values = array(
@@ -45,19 +45,16 @@ class Appartment extends Controller
             $_POST['city'],
             $_POST['zone'],
             $_POST['borough'],
-            $this->quote($_POST['address']),
             $_POST['pieces'],
             $_POST['rooms'],
             $_POST['surface'],
             $_POST['price'],
+            $this->quote($_POST['address']),
             $this->quote($_POST['description']),
             $this->quote($_POST['external']),
             $this->quote($_POST['internal']),
-            $this->quote($_POST['conditions']),
-            );
-        //print_r($values);
-        //echo $serial.' ========= '.$gallery;
-        //print_r($_POST);
+            $this->quote($_POST['conditions'])
+        );
         $this->getModel()->create($columns, $values);
         /*$test = true;
         $status = array('success' => 0, 'fail' => 0);
