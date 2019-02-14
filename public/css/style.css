@@ -255,6 +255,22 @@ header {
   @media only screen and (max-width: 29em) {
     .content {
       margin-left: 7rem; } }
+  .content p.message {
+    justify-self: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 3px;
+    margin-top: 5rem;
+    border: 1px solid grey;
+    width: 60%; }
+    .content p.message.success {
+      color: #3a5319;
+      background-color: #d3e9b5;
+      border-color: #71a230; }
+    .content p.message.fail {
+      color: #7f0c23;
+      background-color: #f594a7;
+      border-color: #ad102f; }
 
 .navigation {
   background-color: #363636;

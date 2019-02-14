@@ -101,7 +101,7 @@ window.addEventListener('load', function () {
 
     //Send form with ajax
     let form = document.forms.namedItem('new_appart');
-    form.addEventListener('submit', addApart);
+    //form.addEventListener('submit', addApart);
     function addApart (e) {
         let fd = new FormData(form);
         //fd.delete('gallery[]');

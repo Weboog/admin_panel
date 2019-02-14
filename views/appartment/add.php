@@ -15,6 +15,11 @@
 <?php require_once './inc/header.php' ?>
 
     <main class="content">
+            <?php
+            if (count($data['success']) > 0) {
+                echo sprintf('<p class="message fail">%s</p>', $data['success'][0]);
+            }
+            ?>
         <section class="appart_form">
             <h2 class="head_form">Ajouter un nouvel appartement</h2>
             <form action="" method="post" name="new_appart" enctype="multipart/form-data">
@@ -96,14 +101,19 @@
                     <textarea name="internal" id="internal" placeholder="à l'intérieur"></textarea>
                     <textarea name="conditions" id="conditions" placeholder="Conditions à remplir"></textarea>
                 </div>
+                <div class="thumbs">
+                    <h3 class="group_label">Miniatures</h3>
+                    <label for="thumb">Sélectionnez des images</label>
+                    <input type="file" id="thumb" name="thumb[]" accept="image/jpeg" multiple>
+                    <div class="sample_images"></div>
+                </div>
                 <div class="gallery">
                     <h3 class="group_label">Gallerie</h3>
                     <label for="gallery">Sélectionnez des images</label>
                     <input type="file" id="gallery" name="gallery[]" accept="image/jpeg" multiple>
                     <div class="sample_images"></div>
                 </div>
-                <input type="reset" value="Réinitialiser">
-                <input type="submit" value="Enregistrer">
+                <input type="submit" name="submit" value="Enregistrer">
             </form>
         </section>
     </main>
