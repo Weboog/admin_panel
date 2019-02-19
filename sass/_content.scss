@@ -6,14 +6,13 @@
   margin-left: 12rem;
   display: grid;
   grid-row-gap: 2rem;
-  p.message{
+  .message{
     justify-self: center;
     font-size: 1.5rem;
     padding: 1rem;
     border-radius: 3px;
     margin-top: 5rem;
     border: 1px solid grey;
-    width: 60%;
     &.success{
       color: darken($color-green, 30%);
       background-color: lighten($color-green, 30%);
@@ -21,7 +20,7 @@
     }
     &.fail{
       color: darken(crimson, 20%);
-      background-color: lighten(crimson, 30%);
+      background-color: lighten(crimson, 35%);
       border-color: darken(crimson, 10%);
     }
   }

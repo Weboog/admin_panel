@@ -255,21 +255,20 @@ header {
   @media only screen and (max-width: 29em) {
     .content {
       margin-left: 7rem; } }
-  .content p.message {
+  .content .message {
     justify-self: center;
     font-size: 1.5rem;
     padding: 1rem;
     border-radius: 3px;
     margin-top: 5rem;
-    border: 1px solid grey;
-    width: 60%; }
-    .content p.message.success {
+    border: 1px solid grey; }
+    .content .message.success {
       color: #3a5319;
       background-color: #d3e9b5;
       border-color: #71a230; }
-    .content p.message.fail {
+    .content .message.fail {
       color: #7f0c23;
-      background-color: #f594a7;
+      background-color: #f7abba;
       border-color: #ad102f; }
 
 .navigation {
@@ -656,13 +655,11 @@ header {
   justify-content: center; }
   .appart_form select, .appart_form input, .appart_form textarea {
     padding: 1rem;
-    border-radius: 3px;
-    border: 1px solid #e1e1e1;
-    background-color: #f6f6f6;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
     color: #3c3c3c; }
     .appart_form select:focus, .appart_form input:focus, .appart_form textarea:focus {
-      border-color: #4169E1;
-      box-shadow: 0 0 5px rgba(65, 105, 225, 0.5); }
+      border-bottom-color: #4169E1; }
   .appart_form textarea {
     width: 30rem; }
   .appart_form form {
@@ -695,16 +692,17 @@ header {
     font-size: 1.5rem;
     color: #4169E1;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    /*&::after{
+                  content: '';
+                  display: block;
+                  width: 100%;
+                  height: 1px;
+                  margin-left: 1rem;
+                  background-color: darken($color-grey-bg, 10%);
+            }*/ }
     .appart_form .group_label + * {
       grid-column: 1 / 2; }
-    .appart_form .group_label::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 1px;
-      margin-left: 1rem;
-      background-color: #d5d5d5; }
   .appart_form .owner {
     display: grid;
     grid-template-columns: 1fr auto; }
@@ -754,5 +752,5 @@ header {
     padding: 1rem;
     box-shadow: 0 3px 8px rgba(54, 54, 54, 0.2);
     cursor: pointer; }
-  .appart_form #gallery {
+  .appart_form .browse {
     display: none; }

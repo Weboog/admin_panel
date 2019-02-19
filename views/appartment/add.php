@@ -16,15 +16,25 @@
 
     <main class="content">
             <?php
+            if (count($data['fail']) > 0) {
+                $status = 'fail';
+                echo '<ul class="message '.$status.'">';
+                echo '<li>'.count($data['fail']).' Erreurs</li>';
+                for ($i = 0; $i < count($data['fail']); $i++) {
+                    echo '<li>&raquo; '.$data['fail'][$i].'</li>';
+                }
+                echo '</ul>';
+            }
             if (count($data['success']) > 0) {
-                echo sprintf('<p class="message fail">%s</p>', $data['success'][0]);
+                $status = 'success';
+                echo sprintf('<p class="message %s">%s</p>', $status, $data['success'][0]);
             }
             ?>
         <section class="appart_form">
             <h2 class="head_form">Ajouter un nouvel appartement</h2>
             <form action="" method="post" name="new_appart" enctype="multipart/form-data">
                 <div class="owner">
-                    <h3 class="group_label">Propréitaire</h3>
+                    <h3 class="group_label">Propriétaire</h3>
                     <select name="owner" id="owner">
                         <option value="0">Propriétaire</option>
                         <option value="1">Abell</option>
@@ -101,16 +111,26 @@
                     <textarea name="internal" id="internal" placeholder="à l'intérieur"></textarea>
                     <textarea name="conditions" id="conditions" placeholder="Conditions à remplir"></textarea>
                 </div>
-                <div class="thumbs">
+                <!--<div class="thumbs">
                     <h3 class="group_label">Miniatures</h3>
                     <label for="thumb">Sélectionnez des images</label>
                     <input type="file" id="thumb" name="thumb[]" accept="image/jpeg" multiple>
                     <div class="sample_images"></div>
+                </div>-->
+
+
+                <div class="gallery">
+                    <h3 class="group_label">Miniatures</h3>
+                    <label for="thumbs">Sélectionnez des miniatures</label>
+                    <input type="file" class="browse" id="thumbs" name="thumbs[]" accept="image/jpeg" multiple>
+                    <div class="sample_images"></div>
                 </div>
+
+
                 <div class="gallery">
                     <h3 class="group_label">Gallerie</h3>
                     <label for="gallery">Sélectionnez des images</label>
-                    <input type="file" id="gallery" name="gallery[]" accept="image/jpeg" multiple>
+                    <input type="file" class="browse" id="gallery" name="gallery[]" accept="image/jpeg" multiple>
                     <div class="sample_images"></div>
                 </div>
                 <input type="submit" name="submit" value="Enregistrer">

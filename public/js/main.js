@@ -115,34 +115,37 @@ window.addEventListener('load', function () {
     }
 
     //Preview Images to be uploaded
-    let addImages = document.querySelector("#gallery");
-    let imageContainer = document.querySelector('.sample_images');
+    let browsers = document.querySelectorAll(".browse");
     let added = [];
-    addImages.addEventListener('change', function () {
-        function readImage(file){
-            let fr = new FileReader();
-            if (/\.(jpe?g)$/i.test(file.name)) {
-                if (!added.includes(file.name)) {
-                    fr.addEventListener('load', function () {
-                        let img = new Image();
-                        img.alt = file.name;
-                        img.title = file.name;
-                        img.src = this.result;
-                        imageContainer.appendChild(img);
-                        added.push(file.name);
-                    });
-                    fr.readAsDataURL(file);
-                } else {
-                    let errorMessage = document.createTextNode('Cette image est déjà sélectionnée.');
-                    //imageContainer.appendChild(errorMessage);
+
+    browsers.forEach(function (browse) {
+        browse.addEventListener('click', function () {
+            this.nextElementSibling.innerHTML = '';
+            this.value = '';
+        });
+        browse.addEventListener('change', function (e) {
+
+            let next = this.nextElementSibling;
+            function readImage(file){
+                let fr = new FileReader();
+                if (/\.(jpe?g)$/i.test(file.name)) {
+                    if (!added.includes(file.name)) {
+                        fr.addEventListener('load', function () {
+                            let img = new Image();
+                            img.alt = file.name;
+                            img.title = file.name;
+                            img.src = this.result;
+                            next.appendChild(img);
+                            added.push(file.name);
+                        });
+                        fr.readAsDataURL(file);
+                    }
                 }
-            }else {
-                let errorMessage = document.createTextNode('Seules les image au format JPG ou JPEG sont autorisées.');
-                //imageContainer.appendChild(errorMessage);
             }
-        }
-        if (this.files){
-            [].forEach.call(this.files, readImage);
-        }
-    });
+            if (this.files){
+                [].forEach.call(this.files, readImage);
+            }
+        });
+    })
+
 });
